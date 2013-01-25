@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "otpnettest", "otpnettest.csproj", "{7F244138-C2C0-4A59-894F-276F97A0029A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F244138-C2C0-4A59-894F-276F97A0029A}.Debug|x86.ActiveCfg = Debug|x86
+		{7F244138-C2C0-4A59-894F-276F97A0029A}.Debug|x86.Build.0 = Debug|x86
+		{7F244138-C2C0-4A59-894F-276F97A0029A}.Release|x86.ActiveCfg = Release|x86
+		{7F244138-C2C0-4A59-894F-276F97A0029A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
