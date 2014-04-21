@@ -5,20 +5,22 @@ using System.Text;
 
 namespace OTPNet
 {
+    // Issue reported by larry.ellis
+    // Patch provided by andrea.bertin
+    // https://code.google.com/p/otpnet/issues/detail?id=1
     class Unixtime
     {
-        private DateTime date;
+        private static readonly DateTime Epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        private readonly DateTime date;
 
         public Unixtime()
         {
-            this.date = DateTime.Now;
+            this.date = DateTime.UtcNow;
         }
 
         public Unixtime(int timestamp)
         {
-            DateTime converted = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-            DateTime newDateTime = converted.AddSeconds(timestamp);
-            this.date = newDateTime.ToLocalTime();
+            this.date = Epoch.AddSeconds(timestamp);
         }
 
         public DateTime toDateTime()
@@ -28,8 +30,7 @@ namespace OTPNet
 
         public long toTimeStamp()
         {
-            TimeSpan span = (this.date - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).ToLocalTime());
-            return Convert.ToInt64(span.TotalSeconds);
+            return (long)this.date.Subtract(Epoch).TotalSeconds;
         }
     }
 }

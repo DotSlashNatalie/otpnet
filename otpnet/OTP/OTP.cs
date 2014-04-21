@@ -67,6 +67,9 @@ namespace OTPNet
 
         public OTP(string secret, int digits)
         {
+            // Issue reported by scox.nz
+            // https://code.google.com/p/otpnet/issues/detail?id=2
+            this.secret = secret;
             this.digits = digits;
             this.digest = HashAlgorithm.SHA1;
         }
